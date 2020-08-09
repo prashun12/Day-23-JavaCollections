@@ -1,0 +1,50 @@
+package employeeWageCompute;
+
+public class EmpBuilder {
+	public final static int isPartTime = 1;
+	public final static int isFullTime = 2;
+	public final static int empRatePerHr = 20;
+	public final static int noOfWorkingDays = 2;
+	public final static int maxHrInMonth = 2;
+
+	public static int computeWage() {
+		int empHrs = 0, totalEmpHrs = 0, totalEmpWage = 0, totalWorkingDays = 0;
+
+		while (totalEmpHrs <= maxHrInMonth && totalWorkingDays <= noOfWorkingDays) {
+			totalWorkingDays++;
+			int empCheck = (int) Math.floor(Math.random() * 10) % 3;
+
+			switch (empCheck) {
+			case isPartTime:
+				empHrs = 4;
+				break;
+			case isFullTime:
+				empHrs = 8;
+				break;
+			default:
+				empHrs = 0;
+			}
+			totalEmpHrs += empHrs;
+			System.out.println("Day# :" + totalWorkingDays + "Emp hr: " + totalEmpHrs);
+
+			totalEmpWage = totalEmpHrs * empRatePerHr;
+
+		}
+
+		return totalEmpWage;
+
+	}
+}
+
+
+//Driver class
+
+package employeeWageCompute;
+
+public class EmpBuilderRunner {
+
+	public static void main(String[] args) {
+		System.out.println(EmpBuilder.computeWage());
+
+	}
+}
