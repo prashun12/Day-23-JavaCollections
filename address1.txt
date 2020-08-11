@@ -1,0 +1,45 @@
+import javax.swing.JOptionPane;
+
+public class Addressbook {
+	ArrayList<PersonInfo>persons;
+	private String pNum;
+
+	public  Addressbook() {
+		persons = new ArrayList<PersonInfo>();
+
+	}
+
+	//Add new person to  ArrayList.
+	public void addPerson() {
+		String name = JOptionPane.showInputDialog("Enter the name");
+		String add = JOptionPane.showInputDialog("Enter the address");
+		String pNum = JOptionPane.showInputDialog("Enter the number");
+	}
+	//constructer.
+	PersonInfo p = new PersonInfo(name, add, pNum);
+	//add above personInfo object to arraylist.
+	persons.add(p);
+//search person record by name by iterating over arraylist.
+	public void searchPerson (String n) {
+		for (PersonInfo person : persons) {
+			//Downcasting
+			PersonInfo p = person;
+			if(n.equals(p.getName())) {
+				p.print();
+			}
+		}
+	}
+//Delete person method.
+	public void deletePerson (String n) {
+		for(int i = 0; i<persons.size(); i++) {
+	    PersonInfo p = persons.get(i);
+	    if(n.equals(p.getName())) {
+	    	p.print();
+	    	persons.remove(i);
+
+	    }
+		}
+	}
+
+
+}
