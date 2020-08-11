@@ -1,0 +1,47 @@
+package oOps.addressBook;
+
+import javax.swing.JOptionPane;
+
+public class PersonInfo {
+	private String name;
+	private String address;
+	private String phoneNum;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getPhoneNum() {
+		return phoneNum;
+	}
+
+	public void setPhoneNum(String phoneNum) {
+		this.phoneNum = phoneNum;
+	}
+
+	// parameterized constructer.
+	public PersonInfo(String name, String address, String phoneNum) {
+		setName(name);
+		setAddress(address);
+		setPhoneNum(phoneNum);
+	}
+
+	// method for displaying person record on GUI.
+	public void print() {
+		JOptionPane.showMessageDialog(null, "name: " + name + "address: " + address + "phoneNum: " + phoneNum);
+
+	}
+
+}
