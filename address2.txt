@@ -1,0 +1,36 @@
+package oOps.addressBook;
+
+import javax.swing.JOptionPane;
+
+public class TestBook {
+
+	public static void main(String[] args) {
+		Addressbook ab = new Addressbook();
+		String input, s;
+		int cs;
+		while (true) {
+			input = JOptionPane.showInputDialog(
+					"Enter 1 to add" + "\n Enter 2 to search" + "\n Enter 3 to delete" + "\n Enter 4 to exit");
+			cs = Integer.parseInt(input);
+			switch (cs) {
+			case 1:
+				ab.addPerson();
+				break;
+			case 2:
+				s = JOptionPane.showInputDialog("Enter name to Search");
+				ab.searchPerson(s);
+				break;
+			case 3:
+				s = JOptionPane.showInputDialog("Enter name to Delete");
+				ab.deletePerson(s);
+				break;
+			case 4:
+				System.exit(0);
+
+			}
+
+		}
+
+	}
+
+}
